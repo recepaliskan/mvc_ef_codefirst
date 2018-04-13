@@ -1,0 +1,79 @@
+﻿@model mvc_ef_codefirst.Models.Kisiler
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Kişi Sil</h2>
+<hr />
+<p>Aşağıdaki kişi kaydını silmek istediğinizden emin misiniz?</p>
+
+
+    @*@Html.HiddenFor(x => x.ID)*@
+    @*<div class="input-group">
+        <span class="input-group-addon" id="txtad">Ad </span>
+
+        @Html.DisplayFor(x => x.Ad, new { @class = "form-control", aria_describedby = "txtad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txtsoyad">Soyad </span>
+
+        @Html.DisplayFor(x => x.Soyad, new { @class = "form-control", aria_describedby = "txtsoyad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon" id="txtyas">Yaş </span>
+
+        @Html.DisplayFor(x => x.Yas, new { @class = "form-control", aria_describedby = "txtyas" })
+
+    </div>
+    <br />
+    <div class="input-group">
+        <input type="submit" class="btn btn-success" value="Sil" />
+    </div>
+    <br />*@
+
+    <table>
+        <tr>
+            <td><b>Ad: </b></td>
+            <td>@Model.Ad</td>
+        </tr>
+        <tr>
+            <td><b>Soyad:  </b></td>
+            <td>@Model.Soyad</td>
+        </tr>
+        <tr>
+            <td><b>Yas: </b></td>
+            <td>@Model.Yas</td>
+        </tr>
+    </table>
+    <br />
+  
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x=>x.ID)// böyle istediğimizi yakalyabiliriz ID yi yakaladık
+    <div class="input-group">
+        <input type="submit" class="btn btn-success" value="Sil" />
+    </div>
+    <br />
+}
+
+    <div class="input-group">
+
+
+
+        @if (ViewBag.Result != null)
+        {
+
+            <div class="alert alert-@ViewBag.Status" role="alert">@ViewBag.Result</div>
+
+
+
+        }
+    </div>
+
+
+
+
